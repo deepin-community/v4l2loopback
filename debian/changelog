@@ -1,5 +1,468 @@
-template-repository (1.0-1) unstable; urgency=medium
+v4l2loopback (0.15.4-2) unstable; urgency=medium
 
-  * Initial release
+  * Add reportbug presubj, explaining expected problems with backports.
+  * Set upstream metadata fields: Security-Contact.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 29 Sep 2026 10:22:46 +0200
+
+v4l2loopback (0.15.4-1) unstable; urgency=medium
+
+  * New upstream version 0.15.4
+  * Drop obsolete 'Priority: optional' stanza.
+  * Bump standards version to 4.7.4
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 24 Jun 2026 16:08:52 +0200
+
+v4l2loopback (0.15.3-1) unstable; urgency=medium
+
+  * New upstream version 0.15.3
+  * Update upstream homepage/repository
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 08 Dec 2025 16:19:32 +0100
+
+v4l2loopback (0.15.2-1) unstable; urgency=medium
+
+  * New upstream version 0.15.2 (Closes: #1118164)
+    + Drop obsolete patches
+  * Drop obsolete Rules-Requires-Root stanza.
+  * Update d/watch to version 5
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 15 Oct 2025 20:09:48 +0200
+
+v4l2loopback (0.15.1-1) unstable; urgency=medium
+
+  * New upstream version 0.15.1
+    (Closes: #1108287)
+  * Include <linux/timer.h> for the "timer_setup" macro.
+    Thanks to Simon Richter <sjr@debian.org> (Closes: #1108287)
+  * Apply 'wrap-and-sort -ast'
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 19 Aug 2025 22:48:42 +0200
+
+v4l2loopback (0.15.0-3) unstable; urgency=medium
+
+  * Team Upload
+  * Trim old instructions from d/README.source:
+    package does not use CDBS anymore
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 17 Aug 2025 20:53:39 +0200
+
+v4l2loopback (0.15.0-2) unstable; urgency=medium
+
+  * v4l2loopback-utils requires a newer version of v4l2loopback-dkms
+    (not the other way round)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 05 Jun 2025 10:06:46 +0200
+
+v4l2loopback (0.15.0-1) unstable; urgency=medium
+
+  * New upstream version 0.15.0 (Closes: #1106246, #1100860)
+    * Drop patches applied upstream
+  * dkms: Ensure a recent enough version of v4l2loopback-utils
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 05 Jun 2025 09:55:40 +0200
+
+v4l2loopback (0.14.0-1) unstable; urgency=medium
+
+  * New upstream version 0.14.0
+    + Refresh patches
+
+  [ Andreas Beckmann ]
+  * dkms.conf: Fix CLEAN command.
+  * dkms.conf: Declare BUILD_EXCLUSIVE_KERNEL_MIN="4.4" for availability of
+    V4L2_COLORSPACE_DCI_P3.
+  * v4l2loopback-source: Promote module-assistant to Depends.
+
+  [ IOhannes m zmölnig (Debian/GNU) ]
+  * Install udev-rules
+  * Forward dkms.conf patch to upstream
+  * Update copyright information
+    + Bump copyright dates
+    + Add 'licensecheck' target
+    + Re-generate d/copyright_hints
+  * Apply 'wrap-and-sort -ast'
+  * Bump d/watch version to 4
+  * Bump standards version to 4.7.2
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 14 Mar 2025 20:54:00 +0100
+
+v4l2loopback (0.13.2-1) unstable; urgency=medium
+
+  * New upstream version 0.13.2 (Closes: #1071037)
+    + Drop patches applied ustream
+  * Update copyright information
+    + Re-generate d/copyright_hints
+  * Bump standards version to 4.7.0
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 24 May 2024 12:58:14 +0200
+
+v4l2loopback (0.13.1-1) unstable; urgency=medium
+
+  * New upstream version 0.13.1
+    + Drop patches applied upstream
+  * v4l2loopback-utils is now arch:any
+  * Add fallback manpage (if help2man cannot be executed while cross-building)
+  * Add patch to fix 'clean' target
+  * Build tarball for v4l2loopback-source in 'build' target
+  * Modernize autopkgtests
+  * Update copyright information
+    + Bump copyright dates
+    + Add 'licensecheck' target
+    + Re-generate d/copyright_hints
+  * Apply 'wrap-and-sort -ast'
+  * Bump debhelper-version to 13 for control-modules
+  * Bump standards version to 4.6.2
+    + Also for control.modules
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 20 Mar 2024 10:08:55 +0100
+
+v4l2loopback (0.12.7-2) unstable; urgency=medium
+
+  * Fix DKMS build on linux>=5.18
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 05 Aug 2022 18:22:57 +0200
+
+v4l2loopback (0.12.7-1) unstable; urgency=medium
+
+  * New upstream version 0.12.7
+
+  [ Andreas Beckmann ]
+  * Switch to dh-sequence-dkms.
+  * Switch to Testsuite: autopkgtest-pkg-dkms.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Remove constraints unnecessary since buster
+
+  [ IOhannes m zmölnig ]
+  * Drop patches applied upstream
+  * Drop unnecessary B-Ds
+  * Bump dh-compat to 13
+  * Bump standards version to 4.6.1
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 05 Aug 2022 00:47:27 +0200
+
+v4l2loopback (0.12.5-1) unstable; urgency=medium
+
+  * New upstream version 0.12.5
+  * Add salsa-ci configuration
+  * Drop outdated d/README.Debian
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 22 Apr 2020 16:36:06 +0200
+
+v4l2loopback (0.12.4-1) unstable; urgency=medium
+
+  * New upstream version 0.12.4
+  * Bump standards version to 4.5.0
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 11 Apr 2020 23:01:58 +0200
+
+v4l2loopback (0.12.3-1) unstable; urgency=medium
+
+  * New upstream version 0.12.3
+  * Refresh d/copyright
+  * Bump standards-version to 4.4.1
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 07 Dec 2019 19:26:02 +0100
+
+v4l2loopback (0.12.2-1) unstable; urgency=medium
+
+  * New upstream version 0.12.2
+
+  * Drop versioned B-Ds where version is satisfied in oldoldstable
+  * Switched build-system from CDBS to DH
+    * Install TODO
+    * Use symlinks to get additional documentation for all binary packages
+  * Update autopkgtests
+    * Explicit Depends on autopkgtests
+    * Drop obsolete "needs-recommmends" restriction
+    * Add "isolation-machine" restriction
+      (Closes: #934709)
+    * Use a script for module-assistant autopkgtest
+  * Bump dh-compat to 12
+    * Use debhelper-compat instead of d/compat
+    * Use dh_prep rather than "dh_clean -k"
+  * Bump standards version to 4.4.0
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 21 Aug 2019 11:59:27 +0200
+
+v4l2loopback (0.12.1-1) unstable; urgency=medium
+
+  * New upstream version 0.12.1
+    (LP: #1813070)
+
+  [ Ondřej Nový ]
+  * d/tests: Use AUTOPKGTEST_ARTIFACTS instead of ADT_ARTIFACTS
+
+  [ IOhannes m zmölnig ]
+  * Bumped standards version to 4.3.0
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 02 Feb 2019 20:56:56 +0100
+
+v4l2loopback (0.12.0-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 16 Jul 2018 11:25:15 +0200
+
+v4l2loopback (0.12.0-3~exp5) experimental; urgency=medium
+
+  * Fixed typo in module-assistant invocation
+  * DKMS tests require "recommended" packages
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sun, 15 Jul 2018 21:46:21 +0200
+
+v4l2loopback (0.12.0-3~exp4) experimental; urgency=medium
+
+  * Re-did DKMS test to no longer be flaky
+  * Fixed module-assistant to build with any kernel-headers
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 13 Jul 2018 10:20:28 +0200
+
+v4l2loopback (0.12.0-3~exp3) experimental; urgency=medium
+
+  * Mark dkms-test as "flaky"
+  * Have m-a test depends on g++
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 12 Jul 2018 23:01:23 +0200
+
+v4l2loopback (0.12.0-3~exp2) experimental; urgency=medium
+
+  * Simplified module-assistant test
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 12 Jul 2018 21:45:59 +0200
+
+v4l2loopback (0.12.0-3~exp1) experimental; urgency=medium
+
+  * Fixed dkms-autopkgtest
+  * Simplistic test for module-assistant
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 11 Jul 2018 18:15:34 +0200
+
+v4l2loopback (0.12.0-2) unstable; urgency=medium
+
+  * Made build reproducible.
+    Thanks to Chris Lamb <lamby@debian.org> (Closes: #903098)
+  * Added autopkgtest (for the dkms module)
+  * Dropped documentation reference of d/control.in
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 10 Jul 2018 23:29:10 +0200
+
+v4l2loopback (0.12.0-1) unstable; urgency=medium
+
+  * New upstream version 0.12.0
+
+  * Dropped d/control.in
+  * v4l2loopback-utils is really Arch:all
+  * Set Rules-Requires-Root to "no"
+  * Bumped standards version to 4.1.5
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 05 Jul 2018 00:22:49 +0200
+
+v4l2loopback (0.11.0-1) unstable; urgency=medium
+
+  * New upstream version 0.11.0
+
+  * Updated d/copyright
+  * Removed trailing whitespace in d/control.in and d/changelog
+  * Updated Vcs-* stanzas to salsa.d.o
+  * Regenerated d/control
+  * Bumped standards version to 4.1.3
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 20 Mar 2018 21:46:44 +0100
+
+v4l2loopback (0.10.0-1) unstable; urgency=medium
+
+  * New upstream version 0.10.0
+    (Closes: #816768, #800605)
+
+  * Removed patches applied upstream.
+  * Updated d/copyright
+  * Updated d/watch to filter-out non-release tags
+  * Notes on how to properly clone the packaging repo
+  * Reformatted of multi-values fields
+  * Updated Vcs-* stanzas (https)
+  * v4l2loopback-utils is Multi-Arch:same
+  * Bumped debhelper compat to 9
+  * Bumped standards-version to 3.9.8
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 03 Dec 2016 20:49:41 +0100
+
+v4l2loopback (0.9.1-4) unstable; urgency=medium
+
+  * Sort output in generated tarball.
+    Thanks to Reiner Herrmann <reiner@reiner-h.de> (Closes: #803183)
+  * Use https://
+    - in Vcs-* stanzas
+    - for homepage
+  * Added README.source to point out CDBS peculiarities
+  * Regenerated debian/control|copyright_hints
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 27 Oct 2015 20:46:45 +0100
+
+v4l2loopback (0.9.1-3) unstable; urgency=medium
+
+  * Migrate to GStreamer-1.0 (Closes: #799721)
+    - Switch ctl-script to use GStreamer-1.0
+    - Depend on gstreamer1.0-tools
+  * ctl-script depends on sudo
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 01 Oct 2015 21:09:17 +0200
+
+v4l2loopback (0.9.1-2) unstable; urgency=medium
+
+  * Include v4l2loopback_formats.h in v4l2loopback-source pkg (Closes: #793435)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Sat, 25 Jul 2015 21:47:02 +0200
+
+v4l2loopback (0.9.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.9.1
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 03 Jun 2015 19:51:48 +0200
+
+v4l2loopback (0.9.0-1) unstable; urgency=medium
+
+  [ IOhannes m zmölnig ]
+  * Imported Upstream version 0.9.0
+
+  * Updated debian/watch to new github redirector
+  * Upstream now comes with README.md
+  * Updated debian/copyright{_hints}
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 02 Jun 2015 20:58:11 +0200
+
+v4l2loopback (0.8.0-5) unstable; urgency=medium
+
+  * Fixate time-stamp for reproducible builds (Closes: #778456)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 27 Apr 2015 22:24:11 +0200
+
+v4l2loopback (0.8.0-4) unstable; urgency=medium
+
+  * Build manpages as part of building v4l2loopback-utils (Closes: #764121)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 06 Oct 2014 21:21:45 +0200
+
+v4l2loopback (0.8.0-3) unstable; urgency=medium
+
+  * Getting make-dependencies right (Closes: #757318)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Thu, 04 Sep 2014 15:06:49 +0200
+
+v4l2loopback (0.8.0-2) unstable; urgency=medium
+
+  * Disabled v4l2loopback-utils on non-linux (Closes: #756401)
+  * Fixed my Maintainer address
+  * Updated debian/(control,copyright_hints)
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Tue, 29 Jul 2014 17:17:46 +0200
+
+v4l2loopback (0.8.0-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.8.0
+  * Use upstream's dkms.conf
+    + Stop generating local dkms.conf file
+  * Fixed my name in the modules' control-file
+  * Used section "kernel" for kernel-modules
+  * Raised priority to "optional"
+  * Updated debian/(control,copyright,copyright_hints)
+  * Bumped Standards-Version to 3.9.5
+
+ -- IOhannes m zmölnig <zmoelnig@iem.at>  Fri, 13 Dec 2013 14:54:10 +0100
+
+v4l2loopback (0.7.1-1) unstable; urgency=low
+
+  * Imported Upstream version 0.7.1
+   - fix LP: #1112644, LP: #1175046, LP: #1182622, LP: #1184444, LP: #1186281,
+     LP: #1186595, LP: #1190382, LP: #1214700, LP: #1219622, LP: #1223742.
+  * Updated debian/changelog
+  * Added Aidan Thornton to copyright-holders
+  * Regenerated debian/{control,copyright_hints}
+
+ -- IOhannes m zmölnig <zmoelnig@iem.at>  Mon, 23 Sep 2013 18:11:13 +0200
+
+v4l2loopback (0.7.0-1) unstable; urgency=low
+
+  [ IOhannes m zmoelnig ]
+  * Imported Upstream version 0.7.0
+  * Removed patches applied upstream
+  * Updated copyright information
+  * Regenerated debian/(control|copyright_hints)
+  * Bumped standards version to 3.9.4
+  * Fixed spelling in package description
+  * Longer description for v4l2loopback-utils
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Fri, 07 Jun 2013 15:28:43 +0200
+
+v4l2loopback (0.6.1-1) unstable; urgency=low
+
+  [ IOhannes m zmoelnig ]
+  * Imported Upstream version 0.6.1
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Fri, 27 Apr 2012 17:45:21 +0200
+
+v4l2loopback (0.6.0-1) UNRELEASED; urgency=low
+
+  [ IOhannes m zmoelnig ]
+  * Imported Upstream version 0.6.0
+  * Added v4l2loopback-utils package (suggested by dkms/modules packages)
+  * Updated debian/copyright
+  * Regenerated debian/(control|copyright_hints)
+  * Bumped standards to 3.9.3
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Fri, 27 Apr 2012 15:08:21 +0200
+
+v4l2loopback (0.5.0-1) unstable; urgency=low
+
+  [ IOhannes m zmölnig ]
+  * Imported Upstream version 0.5.0
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Mon, 02 Jan 2012 18:57:43 +0100
+
+v4l2loopback (0.4.1-1) unstable; urgency=low
+
+  [ IOhannes m zmölnig ]
+  * Imported Upstream version 0.4.1
+  * Provide a BUILT_MODULE_NAME (to keep dkms happy)
+  * Install ChangeLog as changelog
+  * Updated Vcs stanzas
+  * Bumped standards to 3.9.2
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Mon, 28 Nov 2011 13:43:16 +0100
+
+v4l2loopback (0.4.0-1) unstable; urgency=low
+
+  [ IOhannes m zmölnig ]
+  * new upstream release
+  * DKMS support
+  * install upstream documentation into final package
+  * debian/README
+     * note on using module-assistant
+  * debian/README.source
+     * deleted as it is unused
+  * debian/watch
+     * versionmangle to get rid of 'master' autotag
+  * debian/control.in:
+     * fixed long description
+     * shortened VCS link
+     * indentation of deps
+  * debian/control.modules.in: added homepage field
+  * debian/copyright:
+     * switch to DEP5
+     * use cdbs/utils for automated copyright checks
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Tue, 29 Mar 2011 14:54:13 +0200
+
+v4l2loopback (0.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Thu, 20 Jan 2011 12:18:17 +0100
+
+v4l2loopback (0.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #598241)
+
+ -- IOhannes m zmoelnig (gpg-key at iem) <zmoelnig@iem.at>  Fri, 08 Oct 2010 15:11:19 +0200

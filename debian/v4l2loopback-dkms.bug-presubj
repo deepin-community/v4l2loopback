@@ -1,0 +1,35 @@
+Debian/backports users please read this
+=======================================
+
+Please do *not* report build-failures of the v4l2loopback kernel module
+(installed from Debian/stable) against linux kernel-headers from
+Debian/backports.
+
+As https://backports.debian.org/ says:
+> backports are provided on an as-is basis, with risk of
+> incompatibilities with other components in Debian stable.
+
+As of now, v4l2loopback does not provide packages in Debian/backports,
+which are guaranteed to be compatible with the linux kernel (and
+headers). We do *not* consider this a bug.
+
+If you experience this problem, consider one the following:
+
+- Downgrade your kernel image (and headers) to Debian/stable.
+  (You might have to uninstall the kernel headers from Debian/backports)
+
+- Install the 'v4l2loopback' packages from Debian/testing.
+  <https://packages.debian.org/testing/v4l2loopback-dkms>
+
+  In general, it is not advised to mix packages from multiple Debian
+  releases (with Debian/stable + Debian/stable-backports being somewhat an
+  exception). See https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian
+  However, for a single simple package like 'v4l2loopback-dkms', I think
+  the risk is small enough.
+  Having said that, if it breaks, you have to keep the pieces.
+
+- Find somebody who provides 'v4l2loopback' for Debian/backports.
+
+  This is certainly the most convenient solution to the problem,
+  but requires somebody committed to spend their volunteer time on the
+  package.
