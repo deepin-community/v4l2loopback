@@ -1,0 +1,7 @@
+Version: 5
+
+# process this file with uscan(1)
+Template: Github
+Dversionmangle: auto
+Owner: v4l2loopback
+Project: v4l2loopback
